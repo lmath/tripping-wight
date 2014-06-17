@@ -58,7 +58,7 @@ public class BillingSpec extends TestCase{
      * up to that fixed number are billed at zero.
      */
     public final void testBillPaysWithFirstOrderIfInstantVoucher() {
-        Voucher instantVoucher = new InstantVoucher(50, 3, 0);
+        Voucher instantVoucher = new InstantVoucher(3, 50, 0);
         User instantUser = new User(instantVoucher);
 
         instantUser.bill();

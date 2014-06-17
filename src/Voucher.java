@@ -27,8 +27,11 @@ public class Voucher {
 
     }
 
-    public double getCredit() {
-        return credit;
+    public double getDefaultPrice() {
+        return DEFAULT_PRICE;
+    }
+    public void addCredit(double credit) {
+        this.credit += credit;
     }
 
 }
