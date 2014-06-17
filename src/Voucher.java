@@ -1,4 +1,7 @@
-
+/**
+ * A user may have a credit that can be applied to an order, or
+ * may have 0 credit.
+ */
 public class Voucher {
     private double credit;
     private static double DEFAULT_PRICE = 6.95;
@@ -25,13 +28,6 @@ public class Voucher {
             return nextPrice;
         }
 
-    }
-
-    public double getDefaultPrice() {
-        return DEFAULT_PRICE;
-    }
-    public void addCredit(double credit) {
-        this.credit += credit;
     }
 
 }

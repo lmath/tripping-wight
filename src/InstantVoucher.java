@@ -1,4 +1,8 @@
-
+/**
+ * An instant voucher is one where the user pays up front for a fixed
+ * number of orders (possibly at a discount) and then the user is billed
+ * 0 for the orders that have been prepaid.
+ */
 public class InstantVoucher extends Voucher {
     private boolean isPaid;
     private int number;
@@ -24,7 +28,6 @@ public class InstantVoucher extends Voucher {
                 number--;
                 return 0;
             } else {
-
                 double priceAfterCreditAndDiscount = priceAfterCredit * discount * 0.01;
                 double upfrontPrice = priceAfterCreditAndDiscount * number;
                 isPaid = true;

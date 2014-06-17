@@ -1,4 +1,6 @@
-
+/**
+ * A discount voucher entitles a user to a discount for a fixed number of orders.
+ */
 public class DiscountVoucher extends Voucher {
     private int number;
     private double discount;
