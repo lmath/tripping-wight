@@ -4,12 +4,16 @@ public class Order {
     private double price;
 
 
+    public Order() {
+        price = DEFAULT_PRICE;
+    }
+
     /**
      * Access the price the user paid for the order
      * @return price
      */
     public double billedFor() {
-        return 0;
+        return price;
     }
 
     /**
