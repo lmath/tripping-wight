@@ -1,11 +1,9 @@
 
 public class Order {
-    private static double DEFAULT_PRICE = 6.95;
     private double price;
 
-
-    public Order() {
-        price = DEFAULT_PRICE;
+    public Order(Voucher voucher) {
+        price = voucher.nextPrice();
     }
 
     /**
@@ -16,13 +14,5 @@ public class Order {
         return price;
     }
 
-    /**
-     * Calculate and set the price the user will pay, based on their
-     * voucher
-     * @param voucher
-     */
-    public void setPrice(Voucher voucher) {
-
-    }
 
 }

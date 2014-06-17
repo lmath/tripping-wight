@@ -8,7 +8,7 @@ public class User {
      * Default constructor for a user without a voucher
      */
     public User() {
-        voucher = null;
+        voucher = new Voucher(0);
         orders = new ArrayList<Order>();
     }
 
@@ -26,8 +26,7 @@ public class User {
      * Bill user for a new order.
      */
     public void bill(){
-        Order newOrder = new Order();
-        newOrder.setPrice(voucher);
+        Order newOrder = new Order(voucher);
         orders.add(newOrder);
     }
 

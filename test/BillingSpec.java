@@ -25,9 +25,9 @@ public class BillingSpec extends TestCase{
         User creditUser = new User(creditVoucher);
 
         creditUser.bill();
-        assertEquals(creditUser.getOrder(0).billedFor(), 0);
+        assertEquals(creditUser.getOrder(0).billedFor(), 0.0);
         creditUser.bill();
-        assertEquals(creditUser.getOrder(1).billedFor(), 0);
+        assertEquals(creditUser.getOrder(1).billedFor(), 0.0);
         creditUser.bill();
         assertEquals(creditUser.getOrder(2).billedFor(), 5.85);
 
@@ -39,7 +39,7 @@ public class BillingSpec extends TestCase{
      * number of orders.
      */
     public final void testBillAppliesDiscountVoucher(){
-        Voucher discountVoucher = new DiscountVoucher(50, 3);
+        Voucher discountVoucher = new DiscountVoucher(50, 3, 0);
         User discountUser = new User(discountVoucher);
 
         discountUser.bill();
@@ -58,15 +58,15 @@ public class BillingSpec extends TestCase{
      * up to that fixed number are billed at zero.
      */
     public final void testBillPaysWithFirstOrderIfInstantVoucher() {
-        Voucher instantVoucher = new InstantVoucher(50, 3);
+        Voucher instantVoucher = new InstantVoucher(50, 3, 0);
         User instantUser = new User(instantVoucher);
 
         instantUser.bill();
         assertEquals(instantUser.getOrder(0).billedFor(), 10.425);
         instantUser.bill();
-        assertEquals(instantUser.getOrder(1).billedFor(), 0);
+        assertEquals(instantUser.getOrder(1).billedFor(), 0.0);
         instantUser.bill();
-        assertEquals(instantUser.getOrder(2).billedFor(), 0);
+        assertEquals(instantUser.getOrder(2).billedFor(), 0.0);
         instantUser.bill();
         assertEquals(instantUser.getOrder(3).billedFor(), 6.95);
 
