@@ -14,6 +14,14 @@ public class DiscountVoucher extends Voucher {
      * @return
      */
     public double nextPrice() {
-        return 0;
+        double priceAfterCredit = super.nextPrice();
+        if(number > 0) {
+            double priceAfterDiscount = priceAfterCredit * discount * 0.01;
+            number--;
+
+            return priceAfterDiscount;
+        }
+
+        return priceAfterCredit;
     }
 }

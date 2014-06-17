@@ -27,4 +27,8 @@ public class Voucher {
 
     }
 
+    public double getCredit() {
+        return credit;
+    }
+
 }

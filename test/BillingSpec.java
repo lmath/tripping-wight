@@ -39,7 +39,7 @@ public class BillingSpec extends TestCase{
      * number of orders.
      */
     public final void testBillAppliesDiscountVoucher(){
-        Voucher discountVoucher = new DiscountVoucher(50, 3, 0);
+        Voucher discountVoucher = new DiscountVoucher(3, 50, 0);
         User discountUser = new User(discountVoucher);
 
         discountUser.bill();
